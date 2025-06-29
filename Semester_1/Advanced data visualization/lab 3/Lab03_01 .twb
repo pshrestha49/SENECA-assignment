@@ -1,0 +1,503 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1211.0901                               -->
+<workbook original-version='18.1' source-build='2024.3.2 (20243.24.1211.0901)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Lab03_1' inline='true' name='federated.0csl2ty1m6d4rc1aqei411s16enc' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Lab03_1' name='textscan.1ln8d751engl6m164v71d1qp6x3r'>
+            <connection class='textscan' directory='C:/Users/W1tcher/Documents/SENECA Assignments/Advanced data visualization/lab 3' filename='Lab03_1.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Lab03_1 (2)' name='textscan.1jkjio01bdz3sa18fk6q81vxi1k1'>
+            <connection class='textscan' directory='C:/Users/W1tcher/Documents/SENECA Assignments/Advanced data visualization/lab 3' filename='Lab03_1.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1ln8d751engl6m164v71d1qp6x3r' name='Lab03_1.csv' table='[Lab03_1#csv]' type='table'>
+          <columns character-set='UTF-16LE' header='yes' locale='en_US' separator='&#9;'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='real' name='Decreased By' ordinal='1' />
+            <column datatype='real' name='Fund Balance Dec 31' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Lab03_1.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-16LE&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Lab03_1.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Lab03_1.csv_A39D476D97164C68873FA1F687B508A1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Decreased By</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Decreased By]</local-name>
+            <parent-name>[Lab03_1.csv]</parent-name>
+            <remote-alias>Decreased By</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Lab03_1.csv_A39D476D97164C68873FA1F687B508A1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fund Balance Dec 31</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fund Balance Dec 31]</local-name>
+            <parent-name>[Lab03_1.csv]</parent-name>
+            <remote-alias>Fund Balance Dec 31</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Lab03_1.csv_A39D476D97164C68873FA1F687B508A1]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Normalized Fund Balance Color' datatype='real' name='[Calculation_536209869986062336]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Fund Balance Dec 31]) / WINDOW_MAX(SUM([Fund Balance Dec 31]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Peak Fund Balance' datatype='real' name='[Calculation_536209869993369602]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='WINDOW_MAX(SUM([Fund Balance Dec 31]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Lab03_1.csv' datatype='table' name='[__tableau_internal_object_id__].[Lab03_1.csv_A39D476D97164C68873FA1F687B508A1]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Lab03_1.csv' id='Lab03_1.csv_A39D476D97164C68873FA1F687B508A1'>
+            <properties context=''>
+              <relation connection='textscan.1ln8d751engl6m164v71d1qp6x3r' name='Lab03_1.csv' table='[Lab03_1#csv]' type='table'>
+                <columns character-set='UTF-16LE' header='yes' locale='en_US' separator='&#9;'>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='real' name='Decreased By' ordinal='1' />
+                  <column datatype='real' name='Fund Balance Dec 31' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Lab03_2' inline='true' name='federated.1r13hoe1ja3w6s17hnkvf195cj08' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Lab03_2' name='textscan.1gq3t640ekxbbc14glwou039o0eh'>
+            <connection class='textscan' directory='C:/Users/W1tcher/Documents/SENECA Assignments/Advanced data visualization/lab 3' filename='Lab03_2.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Authorized - Audit Figures]' />
+            <value name='[Net Debt - Audit Figures * 2016 Unaudited]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[Lab03_2.csv].[Authorized - Audit Figures]' />
+              <field name='[Lab03_2.csv].[Net Debt - Audit Figures * 2016 Unaudited]' />
+            </group>
+          </groups>
+          <relation connection='textscan.1gq3t640ekxbbc14glwou039o0eh' name='Lab03_2.csv' table='[Lab03_2#csv]' type='table'>
+            <columns character-set='UTF-16LE' header='yes' locale='en_US' separator='&#9;'>
+              <column datatype='integer' name='Year' ordinal='0' />
+              <column datatype='integer' name='Authorized - Audit Figures' ordinal='1' />
+              <column datatype='real' name='Net Debt - Audit Figures * 2016 Unaudited' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Lab03_2.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-16LE&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[Lab03_2.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Lab03_2.csv_489B88050FF342DA9879F4D4882A1508]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Lab03_2.csv_489B88050FF342DA9879F4D4882A1508]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Lab03_2.csv_489B88050FF342DA9879F4D4882A1508]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Debt Type' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Debt Value' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <column caption='Lab03_2.csv' datatype='table' name='[__tableau_internal_object_id__].[Lab03_2.csv_489B88050FF342DA9879F4D4882A1508]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Lab03_2.csv' id='Lab03_2.csv_489B88050FF342DA9879F4D4882A1508'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Authorized - Audit Figures]' />
+                  <value name='[Net Debt - Audit Figures * 2016 Unaudited]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[Lab03_2.csv].[Authorized - Audit Figures]' />
+                    <field name='[Lab03_2.csv].[Net Debt - Audit Figures * 2016 Unaudited]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.1gq3t640ekxbbc14glwou039o0eh' name='Lab03_2.csv' table='[Lab03_2#csv]' type='table'>
+                  <columns character-set='UTF-16LE' header='yes' locale='en_US' separator='&#9;'>
+                    <column datatype='integer' name='Year' ordinal='0' />
+                    <column datatype='integer' name='Authorized - Audit Figures' ordinal='1' />
+                    <column datatype='real' name='Net Debt - Audit Figures * 2016 Unaudited' ordinal='2' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Group 04'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Group 04</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Sussex County Year End Fund Balance Record</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#898989' fontname='Benton Sans Book' fontsize='11'>Fund Balance Record Fund Balance as of 12/31</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Lab03_1' name='federated.0csl2ty1m6d4rc1aqei411s16enc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0csl2ty1m6d4rc1aqei411s16enc'>
+            <column caption='Normalized Fund Balance Color' datatype='real' name='[Calculation_536209869986062336]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Fund Balance Dec 31]) / WINDOW_MAX(SUM([Fund Balance Dec 31]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Fund Balance Dec 31]' role='measure' type='quantitative' />
+            <column-instance column='[Fund Balance Dec 31]' derivation='Sum' name='[sum:Fund Balance Dec 31:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_536209869986062336]' derivation='User' name='[usr:Calculation_536209869986062336:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]' ordering-type='Field' />
+            </column-instance>
+            <column-instance column='[Date]' derivation='Year' name='[yr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0csl2ty1m6d4rc1aqei411s16enc].[usr:Calculation_536209869986062336:qk:1]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Year of Date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Fund Balance Dec 31:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Normalized Fund Balance Color along Year of Date:	</run>
+                <run bold='true'><![CDATA[<[federated.0csl2ty1m6d4rc1aqei411s16enc].[usr:Calculation_536209869986062336:qk:1]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[Fund Balance peaked in <[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]>: $<[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]</rows>
+        <cols>[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]</cols>
+        <annotations>
+          <annotation class='point' id='0' mark-position='1' pullback='12' text-width='137'>
+            <formatted-text>
+              <run fontcolor='#000000' fontname='Benton Sans Book'>Fund Balance</run>
+              <run>Æ&#10;</run>
+              <run fontcolor='#000000' fontname='Benton Sans Book'>peaked in</run>
+              <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[ <[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]>: ]]></run>
+              <run>Æ&#10;</run>
+              <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[<[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.0csl2ty1m6d4rc1aqei411s16enc].[sum:Fund Balance Dec 31:qk]</field>
+                      <field>[federated.0csl2ty1m6d4rc1aqei411s16enc].[yr:Date:ok]</field>
+                      <field>[federated.0csl2ty1m6d4rc1aqei411s16enc].[usr:Calculation_536209869986062336:qk:1]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>20395330.789999999</value>
+                    <value>2008</value>
+                    <value>1.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='108' y='74' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{D979C6AE-29D5-42DE-BB07-93B7970D5C64}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' maximized='true' name='Group 04'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0csl2ty1m6d4rc1aqei411s16enc].[usr:Calculation_536209869986062336:qk:1]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0csl2ty1m6d4rc1aqei411s16enc].[usr:Calculation_536209869986062336:qk:1]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{EB191B10-C433-49E8-8BF3-202AE17DE562}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Group 04' width='192'>
+      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
+      O8KU4TrCVNXxHDvCrP0CHT52q3N3pCPsjLvpBpm7IwEIhGMEwvufe71eSzsU4qKRq0DC1iQA
+      wtYkAMLWJADC1iQAwtYkAMLWJADC1iQAwtYkAMLWJADC1iQAwtYkAMLWJADC1o4EoJTP8GB9
+      i7X7K7Q6Xb76emUU4xLiTBy5HbpQLIIrgEc12Fpbpdnbb4owDAPTNIdeIknXrS3TYx5Zpsdi
+      /dBLJB1apsdiU8nRZXos1uvPXj/8EkmHlzg66yWShpw7K0skPZRIJCjsNQjEkpR3S8yMRw40
+      sSjP0BDjfGzFjccbFAarVw7Uq6rFevVwvdWGGPVAvWJxmR+H6jhYb3WZH8ez1yscPHaHxRPe
+      w8f+LEskHay33tAy1NwdqT+6zZEAJCdnSE7ufz6RTFjaoRAXjTwJFrYmARC2JgEQtiYBELYm
+      ARC2JgEQtiYBELYmARC2JgEQtiYBELYmARC2JgEQtiYBELZ2NACmwcZGmu2tTbq6zkZ6cwTD
+      EuJsHLkduridoaa18Ssttrd0sqU6szPT0hDz2PezQhpiLlRDjInWbrFbKjI2f4VivshkPCYN
+      MdIQs//15W+IUZhbuM7cwnUApqenLe1QiItGngQLW5MACFuTAAhbkwAIW5MACFuTAAhbkwAI
+      W5MACFuTAAhbkwAIW5MACFuTAAhbkwAIWzvSD/Cke66t3oYqxEVx5BFgt7jNZ//7f3z+6SeU
+      azU++PC/RzEuIc7EkUcAh8PJ3Pw8nXqJ9L37JCbHZYkk6Qjb//ryd4RBq6VR1eqkpibxBiK4
+      3R7pCJOOsP2vL39HGExOX+GbFZIIBvyWdijERSNXgYStSQCErUkAhK1JAIStSQCErUkAhK1J
+      AIStSQCErUkAhK1JAIStHQlAt9WgVK5Sr9UwTJNqtTaKcQlxJo4EYCubo1zMs756l52dIp9/
+      dXcU4xLiTDzxFMjEJDyWYHNtg+R47KzHJMSZOXI36Mz0FPWWQdDvIZkcR7V4+7IQF4liDtBl
+      8LAh5psSSlp34B04FIUxnxPTNFEUhU5PZ7PUGLje73EyFfX362tah+zu4PXRgIeJx+oLe3W2
+      d6oD16eSEZLRQL8+ndulWK4PXH91Jkk06OvXb+Qr1FuDz9+11Bgel6NfX6x3Bm5KcjsUYn5X
+      v7ZrmNQ7gze1uB0KAZfar292daqtwZtqgm4HQc+jsZebXaqt3smF34gH3AQeqy9UWzQ7g+9/
+      KuI9MHfb5RYd/eDxDxQAeNSN86z9wYZhWG6okPrnU3+Rx37a9QMH4EkyG6u0TCdKp4k7NEZj
+      N0908gp6o4AnOkc87Hl6sWmwtnofhzdIc2+HyPgUu/ltUqkJ1rZ2uHHjBn7PMadfeoeVew8I
+      hqPs7RQYn0yxncszOzNJrrDH0tJ1nMfMWa/d4N6DdSLRMXZKe6Qm4mQLe4wnwmS2d3jxxRdx
+      OZ4edq1e5sFahngiSnG3xmQ8RKnaIuRVqXfgxrWFY+eusltgM1MinghSrneJeBUaPRWn3sLh
+      jzKXmji2fiefoVjWCHlVWoYTvdvm6lyKO3dXuXLtBcJ+99OLjS737z/AG4xQ2SmQnJ6jUqlw
+      ZTLOVrHC4pWZY/dtdDVW7q0SjsbY3SkxPZOiUteIB91s5na4/sIN3MfMXbtZ5f7qJrF4lMJO
+      lfnZcWpaD6/SI1/RuPnCtWP3Xy/vsJYukByPUCprTMX9dNUAMb/CarbMC1fnjq3fLW6T26kR
+      CbqHex0gEh3D51JxhmIYzRy++AL10hZ7lSqNZueEaoWxaBSv0cA/dZ1yfp3JmauU8jlMxaR3
+      Uu+w6iI+FsHs1JiYv8Ha+hrfWpjgzr0NDKNLu3v8Q63D7WMsEqbeaHJ1Zpy1fJnrU0HU4CSJ
+      WBTnMT9AAK8/SCQcpK51WIj72K4bxIIuqrUmmqadcOwQCEUIhgK0eyYxn4OG7sTtMNF1g3yh
+      cGJ9KBwhEPCjq/t1oaCfvUqVxYVZypUTTtEUJ7GxKM5uldj8TVqNGn6vC7c/hMd18q+E4vQS
+      G4vQ1upcmZuhZSi4nRAIhQgGgpzU+ej2BohGQlQbbZYmAnQ8Yyhmj0DAT7vdPnH//mCYUCiA
+      1tGZCLvwhOL0el3SWzn0XouT/qKHQvtz10MdLgAbG2t0DIV2pYjpTVIvrOL0RfB4PBjG8ee5
+      ptljfWOTrjNILXOXUHyGbPo+/rEJ/A6Tnn78uarRrbO2lcfhDbG9tszs9DRfr25zfWEaTAP9
+      hBPldq3EVmGPoN/HvXSOmXiQu5kKAbNKKD55YudzKZ9lr9bE73ayWmiQ9JnsVFr4vK4DfahP
+      k9tK02y1cGCwU+/ioU2rA36/l0Q8fmL9VnqDVruD2W2jdQxymSydrs6D1Q1C4eNbWc2exlo6
+      i+mJsLP2JU63l+1Mlu3tbbKZDPUTnuPp2h4b2RJen5+1jTROo0s2k+XB6jp1rXVi83q1lKO4
+      VyPodbG8XUVpFMluFyjtVXA4Bpi7zCYNrYVLhVy5Tb2UI5sr4Pd56XX1EwOwtbk/d/S6/D/N
+      fEn9if8LlAAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>

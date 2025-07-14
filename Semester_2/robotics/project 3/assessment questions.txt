@@ -1,0 +1,16 @@
+Assessment Questions – Project 3: Moving JetAuto in the Real World
+1. How did you establish communication with the robot?
+We were able to communicate with the robot on a local Wi-Fi network with SSH. It was able to connect the JetAuto robot to the host machine network. 
+and we published velocity commands in /cmd_vel ROS topics which the ROS node of our robot used to drive the robot with.
+
+2. How different is controlling the robot in Gazebo vs the real world?
+Operation of the robot in Gazebo is far easier and predictable since it is a simulated environment with perfect physics. 
+The real world, though, brings physical variables such as wheel slippage, uneven surfaces and latency into play and so is more demanding in terms of fine tuning and watching during the test.
+
+3. How do you control that the robot moved roughly 1 meter in each of the steps?
+We made an estimate of the movements of the robot by presetting the linear velocity then multiplying with the time duration (distance = speed x time). 
+We arranged the parameters of speed and duration after preliminary tests, confirmed the physical movement on the floor and adjusted the parameters until the length of each step was close to 1 meter.
+
+4. What challenges did you face making the robot move in the real physical world?
+We managed to construct and execute the ROS node on the local system with success, though the robot on the physical world failed the respond in both velocity commands. 
+This could either have been due to improper network installation, wrong URI of ROS Master. 

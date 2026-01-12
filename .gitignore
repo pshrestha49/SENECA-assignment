@@ -216,3 +216,5 @@ __pycache__/
 .cursorindexingignore
 Semester_2/NLP/assignment_6/articles/
 Semester_1/SEBDM/*
+
+aig230-env/
